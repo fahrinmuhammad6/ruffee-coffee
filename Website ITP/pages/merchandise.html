@@ -1,0 +1,954 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchandise | Ruffee Coffee</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/merchandise.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="../index.html" class="logo">
+        <img src="../images/logo.png" alt="Ruffee Coffee Logo">
+        <div class="logo-text">
+            <span>RUFFEE</span>
+            <span>COFFEE</span>
+        </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="reservation.html">RESERVATION</a></li>
+            <li class="active"><a href="merchandise.html">MERCHANDISE</a></li>
+            <li><a href="reviews.html">REVIEWS</a></li>
+            <li><a href="career.html">CAREER</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="merch-hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <p class="small-title">RUFFEE COLLECTION</p>
+
+        <h1>TAKE RUFFEE <span>WITH YOU</span></h1>
+
+        <p class="hero-description">
+            Bring your favourite Ruffee Coffee moments wherever you go.
+            Discover our exclusive merchandise collection made for coffee lovers.
+        </p>
+
+        <a href="#collection" class="hero-btn">
+            EXPLORE COLLECTION <i class="fas fa-arrow-down"></i>
+        </a>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="merch-intro">
+    <p class="section-label">RUFFEE MERCHANDISE</p>
+
+    <h2>MORE THAN JUST <span>A CUP</span></h2>
+
+    <p>
+        From everyday essentials to stylish accessories, our Ruffee merchandise
+        lets you carry the coffee experience wherever life takes you.
+    </p>
+</section>
+
+<!-- PRODUCT COLLECTION -->
+<section class="collection" id="collection">
+    <div class="section-heading">
+        <p>OUR COLLECTION</p>
+        <h2>SHOP THE <span>RUFFEE STYLE</span></h2>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+</section>
+
+<!-- PRODUCT DETAILS MODAL -->
+<div class="product-modal modal-shell" id="productModal">
+    <div class="product-modal-content modal-panel">
+
+        <button class="modal-close" id="modalClose" type="button">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="modal-product">
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="Product">
+            </div>
+
+            <div class="modal-info">
+                <p class="modal-label">RUFFEE MERCHANDISE</p>
+
+                <h2 id="modalName">Product Name</h2>
+
+                <p class="modal-description" id="modalDescription"></p>
+
+                <h3 class="modal-price" id="modalPrice">RM 0.00</h3>
+
+                <div class="quantity-section">
+                    <span>QUANTITY</span>
+
+                    <div class="quantity-control">
+                        <button type="button" id="quantityMinus">−</button>
+                        <span id="quantityValue">1</span>
+                        <button type="button" id="quantityPlus">+</button>
+                    </div>
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="button" class="modal-cart-btn" id="addToCartBtn">
+                        <i class="fas fa-shopping-cart"></i> ADD TO CART
+                    </button>
+
+                    <button type="button" class="modal-buy-btn" id="buyNowBtn">
+                        BUY NOW
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FLOATING CART BUTTON -->
+<button type="button" class="floating-cart" id="floatingCart">
+    <i class="fas fa-shopping-bag"></i>
+    <span id="cartCount">0</span>
+</button>
+
+<!-- SHOPPING CART MODAL -->
+<div class="cart-modal modal-shell" id="cartModal">
+    <div class="cart-content modal-panel">
+
+        <button class="modal-close" id="cartClose" type="button">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <p class="modal-label">YOUR SHOPPING BAG</p>
+        <h2>MY CART</h2>
+
+        <div id="cartItems">
+            <p class="empty-cart">Your cart is empty.</p>
+        </div>
+
+        <div class="cart-total">
+            <span>SUBTOTAL</span>
+            <strong id="cartTotal">RM 0.00</strong>
+        </div>
+
+        <p class="shipping-note">
+            Delivery costs RM5.00. Self-collection is free.
+        </p>
+
+        <button type="button" class="checkout-btn" id="checkoutBtn">
+            PROCEED TO CHECKOUT
+        </button>
+    </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="checkout-modal modal-shell" id="checkoutModal">
+    <div class="checkout-content modal-panel">
+
+        <button class="modal-close" id="checkoutClose" type="button">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <p class="modal-label">RUFFEE COFFEE</p>
+        <h2>CHECKOUT</h2>
+
+        <form id="checkoutForm">
+
+            <div class="form-group">
+                <label for="customerName">FULL NAME</label>
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customerPhone">PHONE NUMBER</label>
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="e.g. 0123456789"
+                    autocomplete="tel"
+                    pattern="[0-9+\-\s]{9,16}"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="customerAddress">DELIVERY ADDRESS</label>
+                <textarea
+                    id="customerAddress"
+                    rows="4"
+                    placeholder="House number, street, postcode, city and state"
+                    autocomplete="street-address"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="deliveryOption">DELIVERY OPTION</label>
+
+                <select id="deliveryOption">
+                    <option value="delivery">Home Delivery — RM 5.00</option>
+                    <option value="pickup">Self Collection — Free</option>
+                </select>
+            </div>
+
+            <div class="order-breakdown">
+                <div>
+                    <span>Subtotal</span>
+                    <strong id="checkoutSubtotal">RM 0.00</strong>
+                </div>
+
+                <div>
+                    <span>Delivery Fee</span>
+                    <strong id="checkoutShipping">RM 5.00</strong>
+                </div>
+
+                <div class="grand-total">
+                    <span>TOTAL</span>
+                    <strong id="checkoutTotal">RM 0.00</strong>
+                </div>
+            </div>
+
+            <button type="submit" class="checkout-btn">
+                CONTINUE TO PAYMENT
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+        </form>
+    </div>
+</div>
+
+<!-- PAYMENT METHOD MODAL -->
+<div class="checkout-modal modal-shell" id="paymentModal">
+    <div class="payment-content modal-panel">
+
+        <button class="modal-close" id="paymentClose" type="button">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <p class="modal-label">RUFFEE COFFEE</p>
+        <h2>PAYMENT METHOD</h2>
+
+        <p class="payment-intro">
+            Choose your preferred payment method.
+        </p>
+
+        <div class="payment-summary">
+            <span>Total to Pay</span>
+            <strong id="paymentTotal">RM 0.00</strong>
+        </div>
+
+        <form id="paymentForm">
+
+            <label class="payment-option">
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="Online Banking"
+                    required
+                >
+                <span>
+                    <i class="fas fa-university"></i>
+                    <strong>Online Banking</strong>
+                    <small>Pay through your bank</small>
+                </span>
+            </label>
+
+            <label class="payment-option">
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="QR Payment"
+                >
+                <span>
+                    <i class="fas fa-qrcode"></i>
+                    <strong>QR Payment</strong>
+                    <small>QR payment option</small>
+                </span>
+            </label>
+
+            <label class="payment-option">
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="E-Wallet"
+                >
+                <span>
+                    <i class="fas fa-wallet"></i>
+                    <strong>E-Wallet</strong>
+                    <small>Digital wallet payment</small>
+                </span>
+            </label>
+
+            <div class="form-group" id="bankGroup" hidden>
+                <label for="bankSelect">SELECT BANK</label>
+
+                <select id="bankSelect">
+                    <option value="">Choose your bank</option>
+                    <option value="Maybank">Maybank</option>
+                    <option value="CIMB Bank">CIMB Bank</option>
+                    <option value="Public Bank">Public Bank</option>
+                    <option value="RHB Bank">RHB Bank</option>
+                    <option value="Bank Islam">Bank Islam</option>
+                    <option value="Bank Rakyat">Bank Rakyat</option>
+                    <option value="Hong Leong Bank">Hong Leong Bank</option>
+                    <option value="AmBank">AmBank</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="walletGroup" hidden>
+                <label for="walletSelect">SELECT E-WALLET</label>
+
+                <select id="walletSelect">
+                    <option value="">Choose your e-wallet</option>
+                    <option value="TNG eWallet">TNG eWallet</option>
+                    <option value="GrabPay">GrabPay</option>
+                    <option value="Boost">Boost</option>
+                    <option value="ShopeePay">ShopeePay</option>
+                </select>
+            </div>
+
+            <div class="payment-notice" id="paymentNotice" hidden></div>
+
+            <button type="submit" class="checkout-btn">
+                CONFIRM DEMO PAYMENT
+                <i class="fas fa-lock"></i>
+            </button>
+
+            <button type="button" class="back-payment-btn" id="backToCheckout">
+                BACK TO CHECKOUT
+            </button>
+
+            <p class="demo-note">
+                Student project demo only. This page does not process real payments
+                or transfer money.
+            </p>
+
+        </form>
+    </div>
+</div>
+
+<!-- RECEIPT MODAL -->
+<div class="receipt-modal modal-shell" id="receiptModal">
+    <div class="receipt-content modal-panel">
+
+        <button class="modal-close" id="receiptXClose" type="button">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="receipt-icon">
+            <i class="fas fa-check"></i>
+        </div>
+
+        <p class="modal-label">RUFFEE COFFEE</p>
+        <h2>ORDER RECEIPT</h2>
+
+        <div id="receiptDetails"></div>
+
+        <button type="button" class="receipt-close" id="receiptClose">
+            DONE
+        </button>
+    </div>
+</div>
+
+<!-- CALL TO ACTION -->
+<section class="merch-cta">
+    <div class="cta-content">
+        <p>MAKE IT YOURS</p>
+        <h2>WEAR THE <span>RUFFEE VIBE</span></h2>
+
+        <p>
+            Whether you're sipping, wearing or carrying it,
+            keep a little Ruffee Coffee with you.
+        </p>
+
+        <a href="#collection" class="cta-btn">SHOP COLLECTION</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <img src="../images/logo.png" alt="Ruffee Coffee Logo">
+
+            <div>
+                <h3>RUFFEE COFFEE</h3>
+                <p>Made for your everyday moments.</p>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <h4>FOLLOW US</h4>
+
+            <div class="social-icons">
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Ruffee Coffee. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+"use strict";
+
+/* PRODUCT DATA: check these image paths against your project folders */
+const products = [
+    {
+        name: "Ruffee Coffee Tumbler",
+        price: 35,
+        image: "../images/tumbler.png",
+        description: "Keep your favourite drink with you wherever you go.",
+        tag: "BEST SELLER"
+    },
+    {
+        name: "Ruffee Coffee T-Shirt",
+        price: 45,
+        image: "../images/tshirt.png",
+        description: "Simple, comfortable and made for everyday coffee lovers.",
+        tag: ""
+    },
+    {
+        name: "Ruffee Coffee Cap",
+        price: 30,
+        image: "../images/cap.jpeg",
+        description: "A casual classic designed to complete your everyday look.",
+        tag: "NEW"
+    },
+    {
+        name: "Ruffee Coffee Tote Bag",
+        price: 25,
+        image: "../images/totebag.png",
+        description: "Carry your essentials with a little Ruffee Coffee style.",
+        tag: ""
+    },
+    {
+        name: "Ruffee Coffee Cup",
+        price: 20,
+        image: "../images/cup.jpg",
+        description: "Your everyday coffee companion, Ruffee style.",
+        tag: ""
+    },
+    {
+        name: "Ruffee Coffee Bag",
+        price: 40,
+        image: "../images/bag.jpg",
+        description: "A stylish everyday bag inspired by Ruffee Coffee.",
+        tag: "LIMITED"
+    }
+];
+
+let cart = [];
+let selectedProduct = null;
+let selectedQuantity = 1;
+let currentCustomer = null;
+
+const $ = id => document.getElementById(id);
+
+const productModal = $("productModal");
+const cartModal = $("cartModal");
+const checkoutModal = $("checkoutModal");
+const paymentModal = $("paymentModal");
+const receiptModal = $("receiptModal");
+
+const checkoutForm = $("checkoutForm");
+const paymentForm = $("paymentForm");
+const deliveryOption = $("deliveryOption");
+const bankGroup = $("bankGroup");
+const bankSelect = $("bankSelect");
+const walletGroup = $("walletGroup");
+const walletSelect = $("walletSelect");
+const paymentNotice = $("paymentNotice");
+
+function money(amount) {
+    return "RM " + Number(amount).toFixed(2);
+}
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[char]);
+}
+
+function subtotal() {
+    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+}
+
+function shippingFee() {
+    return deliveryOption.value === "delivery" ? 5 : 0;
+}
+
+function orderTotal() {
+    return subtotal() + shippingFee();
+}
+
+function showModal(modal) {
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+}
+
+function hideModal(modal) {
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+}
+
+/* DISPLAY PRODUCTS */
+function renderProducts() {
+    $("productGrid").innerHTML = products.map((product, index) => `
+        <article class="product-card">
+            <div class="product-image">
+                ${product.tag
+                    ? `<span class="product-tag ${product.tag === "NEW" ? "new" : ""}">${escapeHTML(product.tag)}</span>`
+                    : ""}
+                <img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.name)}">
+
+                <div class="product-overlay">
+                    <button type="button" class="view-btn" data-index="${index}">
+                        <i class="fas fa-eye"></i> VIEW
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h3>${escapeHTML(product.name)}</h3>
+                <p>${escapeHTML(product.description)}</p>
+
+                <div class="product-bottom">
+                    <span class="price">${money(product.price)}</span>
+
+                    <button type="button" class="cart-btn" data-index="${index}" aria-label="Add to cart">
+                        <i class="fas fa-shopping-bag"></i>
+                    </button>
+                </div>
+            </div>
+        </article>
+    `).join("");
+}
+
+/* OPEN PRODUCT DETAILS */
+function openProduct(product) {
+    selectedProduct = product;
+    selectedQuantity = 1;
+
+    $("modalImage").src = product.image;
+    $("modalImage").alt = product.name;
+    $("modalName").textContent = product.name;
+    $("modalDescription").textContent = product.description;
+    $("modalPrice").textContent = money(product.price);
+    $("quantityValue").textContent = selectedQuantity;
+
+    showModal(productModal);
+}
+
+/* ADD PRODUCT TO CART */
+function addToCart(product, quantity = 1) {
+    if (!product) return;
+
+    const existing = cart.find(item => item.name === product.name);
+
+    if (existing) {
+        existing.quantity = Math.min(20, existing.quantity + quantity);
+    } else {
+        cart.push({
+            ...product,
+            quantity: Math.min(20, quantity)
+        });
+    }
+
+    renderCart();
+}
+
+/* DISPLAY CART */
+function renderCart() {
+    const cartItems = $("cartItems");
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
+    } else {
+        cartItems.innerHTML = cart.map((item, index) => `
+            <div class="cart-item">
+                <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}">
+
+                <div class="cart-item-info">
+                    <h3>${escapeHTML(item.name)}</h3>
+                    <p>${money(item.price)} each</p>
+
+                    <div class="cart-quantity">
+                        <button type="button" data-action="decrease" data-index="${index}">−</button>
+                        <span>${item.quantity}</span>
+                        <button type="button" data-action="increase" data-index="${index}">+</button>
+                    </div>
+                </div>
+
+                <div class="cart-item-right">
+                    <strong>${money(item.price * item.quantity)}</strong>
+
+                    <button type="button" class="remove-cart" data-action="remove" data-index="${index}" aria-label="Remove item">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `).join("");
+    }
+
+    $("cartTotal").textContent = money(subtotal());
+
+    $("cartCount").textContent = cart.reduce(
+        (sum, item) => sum + item.quantity,
+        0
+    );
+
+    updateCheckoutTotals();
+}
+
+/* UPDATE TOTALS */
+function updateCheckoutTotals() {
+    $("checkoutSubtotal").textContent = money(subtotal());
+    $("checkoutShipping").textContent = money(shippingFee());
+    $("checkoutTotal").textContent = money(orderTotal());
+    $("paymentTotal").textContent = money(orderTotal());
+}
+
+/* OPEN CHECKOUT */
+function openCheckout() {
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
+
+    updateCheckoutTotals();
+    hideModal(cartModal);
+    hideModal(productModal);
+    showModal(checkoutModal);
+}
+
+/* PRODUCT BUTTONS */
+$("productGrid").addEventListener("click", event => {
+    const viewButton = event.target.closest(".view-btn");
+    const cartButton = event.target.closest(".cart-btn");
+
+    if (viewButton) {
+        openProduct(products[Number(viewButton.dataset.index)]);
+    }
+
+    if (cartButton) {
+        const product = products[Number(cartButton.dataset.index)];
+        addToCart(product);
+        alert(product.name + " has been added to your cart.");
+    }
+});
+
+$("modalClose").addEventListener("click", () => hideModal(productModal));
+
+$("quantityMinus").addEventListener("click", () => {
+    selectedQuantity = Math.max(1, selectedQuantity - 1);
+    $("quantityValue").textContent = selectedQuantity;
+});
+
+$("quantityPlus").addEventListener("click", () => {
+    selectedQuantity = Math.min(20, selectedQuantity + 1);
+    $("quantityValue").textContent = selectedQuantity;
+});
+
+$("addToCartBtn").addEventListener("click", () => {
+    if (!selectedProduct) return;
+
+    const name = selectedProduct.name;
+    addToCart(selectedProduct, selectedQuantity);
+    hideModal(productModal);
+    alert(name + " has been added to your cart.");
+});
+
+$("buyNowBtn").addEventListener("click", () => {
+    if (!selectedProduct) return;
+
+    addToCart(selectedProduct, selectedQuantity);
+    hideModal(productModal);
+    openCheckout();
+});
+
+/* CART BUTTONS */
+$("floatingCart").addEventListener("click", () => {
+    renderCart();
+    showModal(cartModal);
+});
+
+$("cartClose").addEventListener("click", () => hideModal(cartModal));
+
+$("cartItems").addEventListener("click", event => {
+    const button = event.target.closest("button[data-action]");
+    if (!button) return;
+
+    const index = Number(button.dataset.index);
+    const action = button.dataset.action;
+
+    if (!cart[index]) return;
+
+    if (action === "increase") {
+        cart[index].quantity = Math.min(20, cart[index].quantity + 1);
+    } else if (action === "decrease") {
+        cart[index].quantity -= 1;
+    }
+
+    if (action === "remove" || cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    renderCart();
+});
+
+$("checkoutBtn").addEventListener("click", openCheckout);
+$("checkoutClose").addEventListener("click", () => hideModal(checkoutModal));
+deliveryOption.addEventListener("change", updateCheckoutTotals);
+
+/* CHECKOUT FORM */
+checkoutForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        hideModal(checkoutModal);
+        return;
+    }
+
+    currentCustomer = {
+        name: $("customerName").value.trim(),
+        phone: $("customerPhone").value.trim(),
+        address: $("customerAddress").value.trim(),
+        delivery: deliveryOption.value === "delivery"
+            ? "Home Delivery"
+            : "Self Collection"
+    };
+
+    if (
+        !currentCustomer.name ||
+        !currentCustomer.phone ||
+        (deliveryOption.value === "delivery" && !currentCustomer.address)
+    ) {
+        alert("Please complete all required checkout details.");
+        return;
+    }
+
+    updateCheckoutTotals();
+    hideModal(checkoutModal);
+    showModal(paymentModal);
+});
+
+/* PAYMENT METHOD OPTIONS */
+paymentForm.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+    radio.addEventListener("change", () => {
+        const selected = paymentForm.querySelector(
+            'input[name="paymentMethod"]:checked'
+        );
+
+        const method = selected.value;
+
+        bankGroup.hidden = method !== "Online Banking";
+        walletGroup.hidden = method !== "E-Wallet";
+
+        bankSelect.required = method === "Online Banking";
+        walletSelect.required = method === "E-Wallet";
+
+        paymentNotice.hidden = false;
+
+        if (method === "Online Banking") {
+            paymentNotice.textContent =
+                "Select your bank below. This demonstration does not connect to a real bank.";
+        } else if (method === "QR Payment") {
+            paymentNotice.textContent =
+                "A real payment QR code requires a payment provider. This demo does not generate a payable QR code.";
+        } else {
+            paymentNotice.textContent =
+                "Select your e-wallet below. This demo does not open an e-wallet app or process a transaction.";
+        }
+    });
+});
+
+$("paymentClose").addEventListener("click", () => hideModal(paymentModal));
+
+$("backToCheckout").addEventListener("click", () => {
+    hideModal(paymentModal);
+    showModal(checkoutModal);
+});
+
+/* CONFIRM DEMO PAYMENT AND GENERATE RECEIPT */
+paymentForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    if (!currentCustomer || cart.length === 0) {
+        alert("Your order session is unavailable. Please start checkout again.");
+        hideModal(paymentModal);
+        return;
+    }
+
+    const selected = paymentForm.querySelector(
+        'input[name="paymentMethod"]:checked'
+    );
+
+    if (!selected) {
+        alert("Please select a payment method.");
+        return;
+    }
+
+    let paymentMethod = selected.value;
+
+    if (paymentMethod === "Online Banking") {
+        if (!bankSelect.value) {
+            alert("Please select your bank.");
+            return;
+        }
+
+        paymentMethod += " - " + bankSelect.value;
+    }
+
+    if (paymentMethod === "E-Wallet") {
+        if (!walletSelect.value) {
+            alert("Please select your e-wallet.");
+            return;
+        }
+
+        paymentMethod += " - " + walletSelect.value;
+    }
+
+    const orderNumber = "RFC-" + Date.now().toString().slice(-8);
+    const productRows = cart.map(item => `
+        <div class="receipt-row">
+            <span>${escapeHTML(item.name)} × ${item.quantity}</span>
+            <strong>${money(item.price * item.quantity)}</strong>
+        </div>
+    `).join("");
+
+    $("receiptDetails").innerHTML = `
+        <div class="customer-receipt">
+            <p><strong>Order ID:</strong> ${orderNumber}</p>
+            <p><strong>Customer Name:</strong> ${escapeHTML(currentCustomer.name)}</p>
+            <p><strong>Phone:</strong> ${escapeHTML(currentCustomer.phone)}</p>
+            <p><strong>Delivery Option:</strong> ${escapeHTML(currentCustomer.delivery)}</p>
+
+            ${currentCustomer.delivery === "Home Delivery"
+                ? `<p><strong>Address:</strong><br>${escapeHTML(currentCustomer.address)}</p>`
+                : ""}
+
+            <p><strong>Payment Method:</strong> ${escapeHTML(paymentMethod)}</p>
+            <p><strong>Payment Status:</strong> DEMO ONLY — NOT PAID</p>
+        </div>
+
+        <div class="receipt-products">${productRows}</div>
+
+        <div class="receipt-row">
+            <span>Subtotal</span>
+            <strong>${money(subtotal())}</strong>
+        </div>
+
+        <div class="receipt-row">
+            <span>Delivery Fee</span>
+            <strong>${money(shippingFee())}</strong>
+        </div>
+
+        <div class="receipt-row receipt-total">
+            <span>TOTAL</span>
+            <strong>${money(orderTotal())}</strong>
+        </div>
+
+        <p class="thank-you">Thank you for shopping with Ruffee Coffee!</p>
+        <p class="demo-note">Demo receipt only. No real payment has been processed.</p>
+    `;
+
+    hideModal(paymentModal);
+    showModal(receiptModal);
+
+    cart = [];
+    renderCart();
+
+    checkoutForm.reset();
+    paymentForm.reset();
+    currentCustomer = null;
+
+    bankGroup.hidden = true;
+    walletGroup.hidden = true;
+    bankSelect.required = false;
+    walletSelect.required = false;
+    paymentNotice.hidden = true;
+});
+
+/* CLOSE RECEIPT */
+function closeReceipt() {
+    hideModal(receiptModal);
+}
+
+$("receiptClose").addEventListener("click", closeReceipt);
+$("receiptXClose").addEventListener("click", closeReceipt);
+
+/* CLOSE MODALS WHEN CLICKING OUTSIDE */
+window.addEventListener("click", event => {
+    [
+        productModal,
+        cartModal,
+        checkoutModal,
+        paymentModal,
+        receiptModal
+    ].forEach(modal => {
+        if (event.target === modal) {
+            hideModal(modal);
+        }
+    });
+});
+
+/* MOBILE NAVIGATION */
+$("menuToggle").addEventListener("click", () => {
+    $("navLinks").classList.toggle("show");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        $("navLinks").classList.remove("show");
+    });
+});
+
+/* INITIAL PAGE RENDER */
+renderProducts();
+renderCart();
+</script>
+
+</body>
+</html>

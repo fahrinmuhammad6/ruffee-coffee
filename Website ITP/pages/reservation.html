@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reservation - Ruffee Coffee</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- ============================= -->
+    <!-- EMAILJS -->
+    <!-- ============================= -->
+
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <script>
+        emailjs.init({
+            publicKey: "5mDzcsnzTt2Xfa4Ae"
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- NAVBAR -->
+    <!-- ============================= -->
+
+    <header class="navbar">
+
+        <a href="../index.html" class="logo">
+            <img src="../images/logo.png" alt="Ruffee Coffee Logo">
+            <span>RUFFEE COFFEE</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="reservation.html" class="active">RESERVATION</a>
+            <a href="merchandise.html">MERCHANDISE</a>
+            <a href="reviews.html">REVIEWS</a>
+            <a href="career.html">CAREER</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="contact.html">CONTACT US</a>
+        </nav>
+
+        <button class="menu-toggle">☰</button>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- RESERVATION PAGE -->
+    <!-- ============================= -->
+
+    <main class="reservation-page">
+
+        <div class="reservation-header">
+
+            <h1>
+                <span>Ruffee</span> Reservation
+            </h1>
+
+            <p>
+                Choose how you want to enjoy your Ruffee Coffee.
+            </p>
+
+        </div>
+
+
+        <div class="reservation-content">
+
+            <!-- ============================= -->
+            <!-- SERVICE CARDS -->
+            <!-- ============================= -->
+
+            <div class="service-container" id="serviceContainer">
+
+                <!-- RESERVATION -->
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <h2>Reservation</h2>
+
+                    <p>
+                        Reserve a table at Ruffee Coffee
+                        and enjoy your coffee comfortably.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn-primary"
+                        id="reserveButton">
+
+                        Reserve a Table
+
+                    </button>
+
+                </div>
+
+
+                <!-- PICKUP -->
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+
+                    <h2>Pickup</h2>
+
+                    <p>
+                        Order your favourite drinks
+                        and pick them up at our café.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn-primary"
+                        id="pickupButton">
+
+                        Order for Pickup
+
+                    </button>
+
+                </div>
+
+
+                <!-- DELIVERY -->
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+
+                    <h2>Delivery</h2>
+
+                    <p>
+                        Get your favourite Ruffee Coffee
+                        delivered straight to your doorstep.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn-primary"
+                        id="deliveryButton">
+
+                        Order for Delivery
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- TABLE RESERVATION FORM -->
+            <!-- ============================= -->
+
+            <div
+                class="reservation-form-container"
+                id="reservationForm">
+
+                <div class="form-card">
+
+                    <h2>Reserve a Table</h2>
+
+                    <form id="tableReservationForm">
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="reservationName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="reservationName"
+                                    name="reservation_name"
+                                    placeholder="Enter your name"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="reservationPhone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="reservationPhone"
+                                    name="reservation_phone"
+                                    placeholder="Enter your phone number"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="reservationDate">
+                                    Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="reservationDate"
+                                    name="reservation_date"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="reservationTime">
+                                    Time
+                                </label>
+
+                                <input
+                                    type="time"
+                                    id="reservationTime"
+                                    name="reservation_time"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="reservationGuests">
+                                Number of Guests
+                            </label>
+
+                            <select
+                                id="reservationGuests"
+                                name="reservation_guests"
+                                required>
+
+                                <option value="">
+                                    Select number of guests
+                                </option>
+
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8 Guests</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="reservationNotes">
+                                Special Request
+                            </label>
+
+                            <textarea
+                                id="reservationNotes"
+                                name="reservation_notes"
+                                placeholder="Any special request? (Optional)"></textarea>
+
+                        </div>
+
+
+                        <div class="form-buttons">
+
+                            <button
+                                type="button"
+                                class="btn-secondary"
+                                id="backFromReservation">
+
+                                Back
+
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="btn-primary">
+
+                                Confirm Reservation
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- PICKUP FORM -->
+            <!-- ============================= -->
+
+            <div
+                class="order-form-container"
+                id="pickupForm">
+
+                <div class="form-card">
+
+                    <h2>Pickup Order</h2>
+
+                    <form id="pickupOrderForm">
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="pickupName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="pickupName"
+                                    name="pickup_name"
+                                    placeholder="Enter your name"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="pickupPhone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="pickupPhone"
+                                    name="pickup_phone"
+                                    placeholder="Enter your phone number"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DRINK -->
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="pickupDrink">
+                                    Choose Drink
+                                </label>
+
+                                <select id="pickupDrink">
+
+                                    <option value="">
+                                        Select your drink
+                                    </option>
+
+                                    <option value="Americano" data-price="8.90">
+                                        Americano - RM 8.90
+                                    </option>
+
+                                    <option value="Latte" data-price="11.90">
+                                        Latte - RM 11.90
+                                    </option>
+
+                                    <option value="Mocha" data-price="12.90">
+                                        Mocha - RM 12.90
+                                    </option>
+
+                                    <option value="Cappuccino" data-price="11.90">
+                                        Cappuccino - RM 11.90
+                                    </option>
+
+                                    <option value="Matcha" data-price="12.90">
+                                        Matcha - RM 12.90
+                                    </option>
+
+                                    <option value="Strawberry Matcha" data-price="13.90">
+                                        Strawberry Matcha - RM 13.90
+                                    </option>
+
+                                    <option value="Chocolate" data-price="10.90">
+                                        Chocolate - RM 10.90
+                                    </option>
+
+                                    <option value="Peach Tea" data-price="9.90">
+                                        Peach Tea - RM 9.90
+                                    </option>
+
+                                    <option value="Blue Lemon Mojito" data-price="11.90">
+                                        Blue Lemon Mojito - RM 11.90
+                                    </option>
+
+                                    <option value="Strawberry Mojito" data-price="11.90">
+                                        Strawberry Mojito - RM 11.90
+                                    </option>
+
+                                    <option value="Chocolate Hot" data-price="10.90">
+                                        Chocolate Hot - RM 10.90
+                                    </option>
+
+                                    <option value="Americano Hot" data-price="8.90">
+                                        Americano Hot - RM 8.90
+                                    </option>
+
+                                    <option value="Chocolate Frappe" data-price="14.90">
+                                        Chocolate Frappe - RM 14.90
+                                    </option>
+
+                                    <option value="Biscoff Frappe" data-price="15.90">
+                                        Biscoff Frappe - RM 15.90
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="pickupQuantity">
+                                    Quantity
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="pickupQuantity"
+                                    min="1"
+                                    value="1">
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="add-cart-button"
+                            id="addPickupCart">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Add to Cart
+
+                        </button>
+
+
+                        <!-- CART -->
+
+                        <div class="cart-container">
+
+                            <h3>
+
+                                <i class="fa-solid fa-cart-shopping"></i>
+
+                                Your Cart
+
+                            </h3>
+
+                            <div id="pickupCartItems">
+
+                                <p class="empty-cart">
+                                    Your cart is empty.
+                                </p>
+
+                            </div>
+
+                            <div
+                                class="cart-total"
+                                id="pickupCartTotal">
+
+                                Total: RM 0.00
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="pickupTime">
+                                Pickup Time
+                            </label>
+
+                            <input
+                                type="time"
+                                id="pickupTime"
+                                name="pickup_time"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-buttons">
+
+                            <button
+                                type="button"
+                                class="btn-secondary"
+                                id="backFromPickup">
+
+                                Back
+
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="btn-primary">
+
+                                Checkout
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- DELIVERY FORM -->
+            <!-- ============================= -->
+
+            <div
+                class="order-form-container"
+                id="deliveryForm">
+
+                <div class="form-card">
+
+                    <h2>Delivery Order</h2>
+
+                    <form id="deliveryOrderForm">
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="deliveryName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="deliveryName"
+                                    placeholder="Enter your name"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="deliveryPhone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="deliveryPhone"
+                                    placeholder="Enter your phone number"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="deliveryAddress">
+                                Delivery Address
+                            </label>
+
+                            <textarea
+                                id="deliveryAddress"
+                                placeholder="Enter your complete delivery address"
+                                required></textarea>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="deliveryDrink">
+                                    Choose Drink
+                                </label>
+
+                                <select id="deliveryDrink">
+
+                                    <option value="">
+                                        Select your drink
+                                    </option>
+
+                                    <option value="Americano" data-price="8.90">
+                                        Americano - RM 8.90
+                                    </option>
+
+                                    <option value="Latte" data-price="11.90">
+                                        Latte - RM 11.90
+                                    </option>
+
+                                    <option value="Mocha" data-price="12.90">
+                                        Mocha - RM 12.90
+                                    </option>
+
+                                    <option value="Cappuccino" data-price="11.90">
+                                        Cappuccino - RM 11.90
+                                    </option>
+
+                                    <option value="Matcha" data-price="12.90">
+                                        Matcha - RM 12.90
+                                    </option>
+
+                                    <option value="Strawberry Matcha" data-price="13.90">
+                                        Strawberry Matcha - RM 13.90
+                                    </option>
+
+                                    <option value="Chocolate" data-price="10.90">
+                                        Chocolate - RM 10.90
+                                    </option>
+
+                                    <option value="Peach Tea" data-price="9.90">
+                                        Peach Tea - RM 9.90
+                                    </option>
+
+                                    <option value="Blue Lemon Mojito" data-price="11.90">
+                                        Blue Lemon Mojito - RM 11.90
+                                    </option>
+
+                                    <option value="Strawberry Mojito" data-price="11.90">
+                                        Strawberry Mojito - RM 11.90
+                                    </option>
+
+                                    <option value="Chocolate Hot" data-price="10.90">
+                                        Chocolate Hot - RM 10.90
+                                    </option>
+
+                                    <option value="Americano Hot" data-price="8.90">
+                                        Americano Hot - RM 8.90
+                                    </option>
+
+                                    <option value="Chocolate Frappe" data-price="14.90">
+                                        Chocolate Frappe - RM 14.90
+                                    </option>
+
+                                    <option value="Biscoff Frappe" data-price="15.90">
+                                        Biscoff Frappe - RM 15.90
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="deliveryQuantity">
+                                    Quantity
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="deliveryQuantity"
+                                    min="1"
+                                    value="1">
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="add-cart-button"
+                            id="addDeliveryCart">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Add to Cart
+
+                        </button>
+
+
+                        <!-- DELIVERY CART -->
+
+                        <div class="cart-container">
+
+                            <h3>
+
+                                <i class="fa-solid fa-cart-shopping"></i>
+
+                                Your Cart
+
+                            </h3>
+
+                            <div id="deliveryCartItems">
+
+                                <p class="empty-cart">
+                                    Your cart is empty.
+                                </p>
+
+                            </div>
+
+                            <div
+                                class="cart-total"
+                                id="deliveryCartTotal">
+
+                                Total: RM 0.00
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="deliveryNotes">
+                                Delivery Notes
+                            </label>
+
+                            <textarea
+                                id="deliveryNotes"
+                                placeholder="Any delivery instructions? (Optional)"></textarea>
+
+                        </div>
+
+
+                        <div class="delivery-summary">
+
+                            <div>
+
+                                <span>Delivery Fee</span>
+
+                                <strong>RM 5.00</strong>
+
+                            </div>
+
+                            <div class="delivery-grand-total">
+
+                                <span>Total</span>
+
+                                <strong id="deliveryGrandTotal">
+                                    RM 5.00
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-buttons">
+
+                            <button
+                                type="button"
+                                class="btn-secondary"
+                                id="backFromDelivery">
+
+                                Back
+
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="btn-primary">
+
+                                Checkout
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- RECEIPT -->
+            <!-- ============================= -->
+
+            <div
+                class="receipt-container"
+                id="receiptContainer">
+
+                <div class="receipt-box">
+
+                    <h2>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Order Confirmed
+
+                    </h2>
+
+                    <p id="receiptMessage">
+                        Thank you for choosing Ruffee Coffee.
+                    </p>
+
+                    <div
+                        class="receipt-details"
+                        id="receiptDetails">
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn-primary"
+                        id="backToServices">
+
+                        Back to Reservation
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="footer">
+
+        <h3>RUFFEE COFFEE</h3>
+
+        <p>
+            Made for your everyday moments.
+        </p>
+
+        <div class="social-icons">
+
+            <a href="#" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Ruffee Coffee. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script>
+
+        /* ============================= */
+        /* ELEMENTS */
+        /* ============================= */
+
+        const serviceContainer =
+            document.getElementById("serviceContainer");
+
+        const reservationForm =
+            document.getElementById("reservationForm");
+
+        const pickupForm =
+            document.getElementById("pickupForm");
+
+        const deliveryForm =
+            document.getElementById("deliveryForm");
+
+        const receiptContainer =
+            document.getElementById("receiptContainer");
+
+
+        /* ============================= */
+        /* SHOW / HIDE SECTIONS */
+        /* ============================= */
+
+        function hideAllSections() {
+
+            reservationForm.classList.remove("show");
+
+            pickupForm.classList.remove("show");
+
+            deliveryForm.classList.remove("show");
+
+            receiptContainer.classList.remove("show");
+
+        }
+
+
+        function showSection(section) {
+
+            serviceContainer.classList.add("hidden");
+
+            hideAllSections();
+
+            section.classList.add("show");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        function showServices() {
+
+            hideAllSections();
+
+            serviceContainer.classList.remove("hidden");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* ============================= */
+        /* SERVICE BUTTONS */
+        /* ============================= */
+
+        document
+            .getElementById("reserveButton")
+            .addEventListener("click", function () {
+
+                showSection(reservationForm);
+
+            });
+
+
+        document
+            .getElementById("pickupButton")
+            .addEventListener("click", function () {
+
+                showSection(pickupForm);
+
+            });
+
+
+        document
+            .getElementById("deliveryButton")
+            .addEventListener("click", function () {
+
+                showSection(deliveryForm);
+
+            });
+
+
+        /* ============================= */
+        /* BACK BUTTONS */
+        /* ============================= */
+
+        document
+            .getElementById("backFromReservation")
+            .addEventListener("click", showServices);
+
+
+        document
+            .getElementById("backFromPickup")
+            .addEventListener("click", showServices);
+
+
+        document
+            .getElementById("backFromDelivery")
+            .addEventListener("click", showServices);
+
+
+        document
+            .getElementById("backToServices")
+            .addEventListener("click", showServices);
+
+
+        /* ============================= */
+        /* RESERVATION DATE */
+        /* ============================= */
+
+        const reservationDate =
+            document.getElementById("reservationDate");
+
+        const today =
+            new Date().toISOString().split("T")[0];
+
+        reservationDate.min = today;
+
+
+        /* ============================= */
+        /* CART DATA */
+        /* ============================= */
+
+        let pickupCart = [];
+
+        let deliveryCart = [];
+
+
+        /* ============================= */
+        /* FORMAT PRICE */
+        /* ============================= */
+
+        function formatPrice(price) {
+
+            return "RM " + price.toFixed(2);
+
+        }
+
+
+        /* ============================= */
+        /* PICKUP CART */
+        /* ============================= */
+
+        function renderPickupCart() {
+
+            const cartItems =
+                document.getElementById("pickupCartItems");
+
+            const cartTotal =
+                document.getElementById("pickupCartTotal");
+
+
+            if (pickupCart.length === 0) {
+
+                cartItems.innerHTML =
+                    '<p class="empty-cart">Your cart is empty.</p>';
+
+                cartTotal.textContent =
+                    "Total: RM 0.00";
+
+                return;
+
+            }
+
+
+            let total = 0;
+
+            cartItems.innerHTML = "";
+
+
+            pickupCart.forEach(function (item, index) {
+
+                const itemTotal =
+                    item.price * item.quantity;
+
+                total += itemTotal;
+
+
+                const itemElement =
+                    document.createElement("div");
+
+                itemElement.className =
+                    "cart-item";
+
+
+                itemElement.innerHTML = `
+
+                    <div>
+
+                        <div class="cart-item-name">
+                            ${item.name}
+                        </div>
+
+                        <small>
+                            ${item.quantity} x ${formatPrice(item.price)}
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="cart-item-price">
+                            ${formatPrice(itemTotal)}
+                        </span>
+
+                        <button
+                            type="button"
+                            class="remove-cart"
+                            onclick="removePickupItem(${index})">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                cartItems.appendChild(itemElement);
+
+            });
+
+
+            cartTotal.textContent =
+                "Total: " + formatPrice(total);
+
+        }
+
+
+        function removePickupItem(index) {
+
+            pickupCart.splice(index, 1);
+
+            renderPickupCart();
+
+        }
+
+
+        /* ============================= */
+        /* ADD PICKUP CART */
+        /* ============================= */
+
+        document
+            .getElementById("addPickupCart")
+            .addEventListener("click", function () {
+
+                const select =
+                    document.getElementById("pickupDrink");
+
+                const quantity =
+                    parseInt(
+                        document.getElementById("pickupQuantity").value
+                    );
+
+
+                if (!select.value) {
+
+                    alert("Please select a drink.");
+
+                    return;
+
+                }
+
+
+                if (!quantity || quantity < 1) {
+
+                    alert("Please enter a valid quantity.");
+
+                    return;
+
+                }
+
+
+                const selected =
+                    select.options[select.selectedIndex];
+
+
+                const price =
+                    parseFloat(
+                        selected.dataset.price
+                    );
+
+
+                pickupCart.push({
+
+                    name: selected.value,
+
+                    price: price,
+
+                    quantity: quantity
+
+                });
+
+
+                renderPickupCart();
+
+
+                select.value = "";
+
+                document.getElementById(
+                    "pickupQuantity"
+                ).value = 1;
+
+            });
+
+
+        /* ============================= */
+        /* DELIVERY CART */
+        /* ============================= */
+
+        function renderDeliveryCart() {
+
+            const cartItems =
+                document.getElementById("deliveryCartItems");
+
+            const cartTotal =
+                document.getElementById("deliveryCartTotal");
+
+            const grandTotal =
+                document.getElementById("deliveryGrandTotal");
+
+
+            if (deliveryCart.length === 0) {
+
+                cartItems.innerHTML =
+                    '<p class="empty-cart">Your cart is empty.</p>';
+
+                cartTotal.textContent =
+                    "Total: RM 0.00";
+
+                grandTotal.textContent =
+                    "RM 5.00";
+
+                return;
+
+            }
+
+
+            let total = 0;
+
+            cartItems.innerHTML = "";
+
+
+            deliveryCart.forEach(function (item, index) {
+
+                const itemTotal =
+                    item.price * item.quantity;
+
+                total += itemTotal;
+
+
+                const itemElement =
+                    document.createElement("div");
+
+                itemElement.className =
+                    "cart-item";
+
+
+                itemElement.innerHTML = `
+
+                    <div>
+
+                        <div class="cart-item-name">
+                            ${item.name}
+                        </div>
+
+                        <small>
+                            ${item.quantity} x ${formatPrice(item.price)}
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="cart-item-price">
+                            ${formatPrice(itemTotal)}
+                        </span>
+
+                        <button
+                            type="button"
+                            class="remove-cart"
+                            onclick="removeDeliveryItem(${index})">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                cartItems.appendChild(itemElement);
+
+            });
+
+
+            cartTotal.textContent =
+                "Total: " + formatPrice(total);
+
+
+            grandTotal.textContent =
+                formatPrice(total + 5);
+
+        }
+
+
+        function removeDeliveryItem(index) {
+
+            deliveryCart.splice(index, 1);
+
+            renderDeliveryCart();
+
+        }
+
+
+        /* ============================= */
+        /* ADD DELIVERY CART */
+        /* ============================= */
+
+        document
+            .getElementById("addDeliveryCart")
+            .addEventListener("click", function () {
+
+                const select =
+                    document.getElementById("deliveryDrink");
+
+                const quantity =
+                    parseInt(
+                        document.getElementById("deliveryQuantity").value
+                    );
+
+
+                if (!select.value) {
+
+                    alert("Please select a drink.");
+
+                    return;
+
+                }
+
+
+                if (!quantity || quantity < 1) {
+
+                    alert("Please enter a valid quantity.");
+
+                    return;
+
+                }
+
+
+                const selected =
+                    select.options[select.selectedIndex];
+
+
+                const price =
+                    parseFloat(
+                        selected.dataset.price
+                    );
+
+
+                deliveryCart.push({
+
+                    name: selected.value,
+
+                    price: price,
+
+                    quantity: quantity
+
+                });
+
+
+                renderDeliveryCart();
+
+
+                select.value = "";
+
+                document.getElementById(
+                    "deliveryQuantity"
+                ).value = 1;
+
+            });
+
+
+        /* ============================= */
+        /* GET CART TOTAL */
+        /* ============================= */
+
+        function getCartTotal(cart) {
+
+            return cart.reduce(function (total, item) {
+
+                return total +
+                    (item.price * item.quantity);
+
+            }, 0);
+
+        }
+
+
+        /* ============================= */
+        /* SHOW RECEIPT */
+        /* ============================= */
+
+        function showReceipt(title, details) {
+
+            serviceContainer.classList.add("hidden");
+
+            hideAllSections();
+
+            receiptContainer.classList.add("show");
+
+
+            document.getElementById(
+                "receiptMessage"
+            ).textContent = title;
+
+
+            document.getElementById(
+                "receiptDetails"
+            ).innerHTML = details;
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* ============================= */
+        /* RESERVATION SUBMIT + EMAILJS */
+        /* ============================= */
+
+        document
+            .getElementById("tableReservationForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                const form = this;
+
+
+                const name =
+                    document.getElementById(
+                        "reservationName"
+                    ).value;
+
+
+                const phone =
+                    document.getElementById(
+                        "reservationPhone"
+                    ).value;
+
+
+                const date =
+                    document.getElementById(
+                        "reservationDate"
+                    ).value;
+
+
+                const time =
+                    document.getElementById(
+                        "reservationTime"
+                    ).value;
+
+
+                const guests =
+                    document.getElementById(
+                        "reservationGuests"
+                    ).value;
+
+
+                const notes =
+                    document.getElementById(
+                        "reservationNotes"
+                    ).value;
+
+
+                const submitButton =
+                    form.querySelector(
+                        'button[type="submit"]'
+                    );
+
+
+                submitButton.disabled = true;
+
+                submitButton.textContent =
+                    "Sending...";
+
+
+                emailjs.sendForm(
+
+                    "service_9jvn4ad",
+
+                    "template_b54xxeg",
+
+                    form
+
+                )
+
+                .then(function () {
+
+                    showReceipt(
+
+                        "Your table reservation has been confirmed!",
+
+                        `
+
+                            <div class="receipt-row">
+
+                                <span>Name</span>
+
+                                <strong>
+                                    ${name}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="receipt-row">
+
+                                <span>Phone</span>
+
+                                <strong>
+                                    ${phone}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="receipt-row">
+
+                                <span>Date</span>
+
+                                <strong>
+                                    ${date}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="receipt-row">
+
+                                <span>Time</span>
+
+                                <strong>
+                                    ${time}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="receipt-row">
+
+                                <span>Guests</span>
+
+                                <strong>
+                                    ${guests}
+                                </strong>
+
+                            </div>
+
+
+                            ${
+                                notes
+                                ?
+                                `
+
+                                    <div class="receipt-row">
+
+                                        <span>
+                                            Special Request
+                                        </span>
+
+                                        <strong>
+                                            ${notes}
+                                        </strong>
+
+                                    </div>
+
+                                `
+                                :
+                                ""
+                            }
+
+                        `
+
+                    );
+
+
+                    form.reset();
+
+                    reservationDate.min =
+                        today;
+
+
+                    submitButton.disabled =
+                        false;
+
+
+                    submitButton.textContent =
+                        "Confirm Reservation";
+
+                })
+
+
+                .catch(function (error) {
+
+                    console.error(
+                        "Email failed:",
+                        error
+                    );
+
+
+                    alert(
+                        "Sorry, your reservation could not be sent. Please try again."
+                    );
+
+
+                    submitButton.disabled =
+                        false;
+
+
+                    submitButton.textContent =
+                        "Confirm Reservation";
+
+                });
+
+            });
+
+
+        /* ============================= */
+        /* PICKUP SUBMIT + EMAILJS */
+        /* ============================= */
+
+        document
+            .getElementById("pickupOrderForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+
+                const form = this;
+
+
+                const name =
+                    document.getElementById(
+                        "pickupName"
+                    ).value;
+
+
+                const phone =
+                    document.getElementById(
+                        "pickupPhone"
+                    ).value;
+
+
+                const pickupTime =
+                    document.getElementById(
+                        "pickupTime"
+                    ).value;
+
+
+                /* ============================= */
+                /* CHECK CART */
+                /* ============================= */
+
+                if (pickupCart.length === 0) {
+
+                    alert(
+                        "Please add at least one drink to your cart."
+                    );
+
+                    return;
+
+                }
+
+
+                /* ============================= */
+                /* TOTAL */
+                /* ============================= */
+
+                const total =
+                    getCartTotal(pickupCart);
+
+
+                /* ============================= */
+                /* CREATE EMAIL DATA */
+                /* ============================= */
+
+                let itemsText = "";
+
+                let drinkNames = "";
+
+                let drinkQuantities = "";
+
+
+                pickupCart.forEach(function (item) {
+
+                    const itemTotal =
+                        item.price * item.quantity;
+
+
+                    /* FULL ORDER */
+
+                    itemsText +=
+                        item.name +
+                        " x " +
+                        item.quantity +
+                        " - " +
+                        formatPrice(itemTotal) +
+                        "\n";
+
+
+                    /* DRINK NAME */
+
+                    drinkNames +=
+                        item.name +
+                        "\n";
+
+
+                    /* QUANTITY */
+
+                    drinkQuantities +=
+                        item.quantity +
+                        "\n";
+
+                });
+
+
+                /* ============================= */
+                /* BUTTON */
+                /* ============================= */
+
+                const submitButton =
+                    form.querySelector(
+                        'button[type="submit"]'
+                    );
+
+
+                submitButton.disabled = true;
+
+                submitButton.textContent =
+                    "Sending...";
+
+
+                /* ============================= */
+                /* EMAILJS TEMPLATE DATA */
+                /* ============================= */
+
+                const templateParams = {
+
+                    pickup_name:
+                        name,
+
+                    pickup_phone:
+                        phone,
+
+                    pickup_time:
+                        pickupTime,
+
+                    pickup_items:
+                        itemsText,
+
+                    pickup_drinks:
+                        drinkNames,
+
+                    pickup_quantities:
+                        drinkQuantities,
+
+                    pickup_total:
+                        formatPrice(total)
+
+                };
+
+
+                /* ============================= */
+                /* DEBUG */
+                /* ============================= */
+
+                console.log(
+                    "Pickup EmailJS Data:",
+                    templateParams
+                );
+
+
+                /* ============================= */
+                /* SEND EMAIL */
+                /* ============================= */
+
+                emailjs.send(
+
+                    "service_9jvn4ad",
+
+                    "template_a687wup",
+
+                    templateParams
+
+                )
+
+                .then(function (response) {
+
+                    console.log(
+                        "Pickup order email sent successfully:",
+                        response.status,
+                        response.text
+                    );
+
+
+                    /* ============================= */
+                    /* RECEIPT ITEMS */
+                    /* ============================= */
+
+                    let itemsHTML = "";
+
+
+                    pickupCart.forEach(
+                        function (item) {
+
+                            itemsHTML += `
+
+                                <div class="receipt-row">
+
+                                    <span>
+                                        ${item.name}
+                                        x
+                                        ${item.quantity}
+                                    </span>
+
+                                    <strong>
+                                        ${formatPrice(
+                                            item.price *
+                                            item.quantity
+                                        )}
+                                    </strong>
+
+                                </div>
+
+                            `;
+
+                        }
+                    );
+
+
+                    /* ============================= */
+                    /* SHOW RECEIPT */
+                    /* ============================= */
+
+                    showReceipt(
+
+                        "Your pickup order has been confirmed!",
+
+                        `
+
+                            <div class="receipt-row">
+
+                                <span>Name</span>
+
+                                <strong>
+                                    ${name}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="receipt-row">
+
+                                <span>Phone</span>
+
+                                <strong>
+                                    ${phone}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="receipt-row">
+
+                                <span>Pickup Time</span>
+
+                                <strong>
+                                    ${pickupTime}
+                                </strong>
+
+                            </div>
+
+
+                            ${itemsHTML}
+
+
+                            <div class="receipt-row receipt-total">
+
+                                <span>Total</span>
+
+                                <strong>
+                                    ${formatPrice(total)}
+                                </strong>
+
+                            </div>
+
+                        `
+
+                    );
+
+
+                    /* ============================= */
+                    /* CLEAR CART */
+                    /* ============================= */
+
+                    pickupCart = [];
+
+                    renderPickupCart();
+
+
+                    /* ============================= */
+                    /* RESET FORM */
+                    /* ============================= */
+
+                    form.reset();
+
+
+                    document.getElementById(
+                        "pickupQuantity"
+                    ).value = 1;
+
+
+                    /* ============================= */
+                    /* ENABLE BUTTON */
+                    /* ============================= */
+
+                    submitButton.disabled =
+                        false;
+
+
+                    submitButton.textContent =
+                        "Checkout";
+
+                })
+
+
+                .catch(function (error) {
+
+                    console.error(
+                        "Pickup order email failed:",
+                        error
+                    );
+
+
+                    alert(
+                        "Sorry, your pickup order could not be sent. Please try again."
+                    );
+
+
+                    submitButton.disabled =
+                        false;
+
+
+                    submitButton.textContent =
+                        "Checkout";
+
+                });
+
+            });
+
+
+        /* ============================= */
+        /* DELIVERY SUBMIT */
+        /* ============================= */
+
+        document
+            .getElementById("deliveryOrderForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById(
+                        "deliveryName"
+                    ).value;
+
+
+                const phone =
+                    document.getElementById(
+                        "deliveryPhone"
+                    ).value;
+
+
+                const address =
+                    document.getElementById(
+                        "deliveryAddress"
+                    ).value;
+
+
+                const notes =
+                    document.getElementById(
+                        "deliveryNotes"
+                    ).value;
+
+
+                if (deliveryCart.length === 0) {
+
+                    alert(
+                        "Please add at least one drink to your cart."
+                    );
+
+                    return;
+
+                }
+
+
+                const subtotal =
+                    getCartTotal(deliveryCart);
+
+
+                const deliveryFee = 5;
+
+
+                const grandTotal =
+                    subtotal + deliveryFee;
+
+
+                let itemsHTML = "";
+
+
+                deliveryCart.forEach(function (item) {
+
+                    itemsHTML += `
+
+                        <div class="receipt-row">
+
+                            <span>
+                                ${item.name} x ${item.quantity}
+                            </span>
+
+                            <strong>
+                                ${formatPrice(
+                                    item.price *
+                                    item.quantity
+                                )}
+                            </strong>
+
+                        </div>
+
+                    `;
+
+                });
+
+
+                showReceipt(
+
+                    "Your delivery order has been confirmed!",
+
+                    `
+
+                        <div class="receipt-row">
+
+                            <span>Name</span>
+
+                            <strong>
+                                ${name}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="receipt-row">
+
+                            <span>Phone</span>
+
+                            <strong>
+                                ${phone}
+                            </strong>
+
+                        </div>
+
+
+                        <div class="receipt-row">
+
+                            <span>Address</span>
+
+                            <strong>
+                                ${address}
+                            </strong>
+
+                        </div>
+
+
+                        ${itemsHTML}
+
+
+                        <div class="receipt-row">
+
+                            <span>
+                                Delivery Fee
+                            </span>
+
+                            <strong>
+                                ${formatPrice(deliveryFee)}
+                            </strong>
+
+                        </div>
+
+
+                        ${
+                            notes
+                            ?
+                            `
+
+                                <div class="receipt-row">
+
+                                    <span>
+                                        Delivery Notes
+                                    </span>
+
+                                    <strong>
+                                        ${notes}
+                                    </strong>
+
+                                </div>
+
+                            `
+                            :
+                            ""
+                        }
+
+
+                        <div class="receipt-row receipt-total">
+
+                            <span>Total</span>
+
+                            <strong>
+                                ${formatPrice(grandTotal)}
+                            </strong>
+
+                        </div>
+
+                    `
+
+                );
+
+
+                deliveryCart = [];
+
+                renderDeliveryCart();
+
+            });
+
+
+        /* ============================= */
+        /* MOBILE MENU */
+        /* ============================= */
+
+        const menuToggle =
+            document.querySelector(".menu-toggle");
+
+
+        const navLinks =
+            document.querySelector(".nav-links");
+
+
+        if (menuToggle) {
+
+            menuToggle.addEventListener(
+                "click",
+                function () {
+
+                    navLinks.classList.toggle(
+                        "active"
+                    );
+
+                }
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

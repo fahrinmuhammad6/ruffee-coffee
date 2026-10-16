@@ -1,0 +1,1093 @@
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5ead8;
+    color: #542d1d;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+
+    background: #e8b844;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #542d1d;
+
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #542d1d;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 2px;
+
+    left: 50%;
+    bottom: -8px;
+
+    background: #542d1d;
+
+    transform: translateX(-50%);
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: #542d1d;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.reviews-hero {
+    min-height: 620px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background-image: url("../images/cafe2.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(40, 20, 10, 0.90),
+            rgba(40, 20, 10, 0.65),
+            rgba(40, 20, 10, 0.20)
+        );
+}
+
+.reviews-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin-left: 8%;
+    margin-right: 8%;
+
+    color: white;
+}
+
+.hero-small {
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+    color: #f5ead8;
+}
+
+.reviews-hero h1 {
+    font-size: clamp(48px, 6vw, 82px);
+
+    line-height: 0.98;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 28px;
+}
+
+.reviews-hero h1 span {
+    color: #e8b844;
+}
+
+.hero-description {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #f5ead8;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   OVERALL RATING
+========================================= */
+
+.overall-rating {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.rating-number {
+    font-size: 54px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    color: #e8b844;
+}
+
+.rating-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.stars {
+    display: flex;
+
+    gap: 4px;
+
+    color: #e8b844;
+
+    font-size: 17px;
+}
+
+.rating-content span {
+    font-size: 13px;
+
+    color: #f5ead8;
+}
+
+
+/* =========================================
+   CUSTOMER STORIES
+   CAFE3 BACKGROUND
+========================================= */
+
+.reviews-section {
+    position: relative;
+
+    padding: 100px 7%;
+
+    background:
+        linear-gradient(
+            rgba(40, 22, 12, 0.58),
+            rgba(40, 22, 12, 0.58)
+        ),
+        url("../images/cafe3.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.section-header {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-header p {
+    margin-bottom: 15px;
+
+    color: #e8b844;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.section-header h2 {
+    color: white;
+
+    font-size: clamp(34px, 4vw, 52px);
+
+    line-height: 1.1;
+}
+
+.section-header h2 span {
+    color: #e8b844;
+}
+
+.header-line {
+    width: 55px;
+
+    height: 4px;
+
+    margin: 25px auto 0;
+
+    background: #e8b844;
+
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   REVIEW GRID
+========================================= */
+
+.reviews-grid {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* =========================================
+   REVIEW CARD
+========================================= */
+
+.review-card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================
+   REVIEW USER
+========================================= */
+
+.review-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.review-top img,
+.default-avatar {
+    width: 62px;
+
+    height: 62px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+.review-top img {
+    object-fit: cover;
+
+    border: 3px solid #f5ead8;
+}
+
+.default-avatar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e8b844;
+
+    color: #542d1d;
+
+    font-size: 22px;
+}
+
+.review-user {
+    flex: 1;
+}
+
+.review-user h3 {
+    margin-bottom: 5px;
+
+    color: #542d1d;
+
+    font-size: 17px;
+}
+
+.review-user span {
+    color: #987c6c;
+
+    font-size: 12px;
+}
+
+.quote-icon {
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #f5ead8;
+
+    color: #b27a20;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   REVIEW STARS
+========================================= */
+
+.review-stars {
+    display: flex;
+
+    gap: 3px;
+
+    margin-bottom: 17px;
+
+    color: #e8b844;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   REVIEW COMMENT
+========================================= */
+
+.review-comment {
+    min-height: 110px;
+
+    color: #6b5144;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.review-date {
+    display: block;
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eee2d4;
+
+    color: #a08c80;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   NEW REVIEW
+========================================= */
+
+.new-review {
+    animation: reviewAppear 0.5s ease;
+}
+
+@keyframes reviewAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   WRITE REVIEW SECTION
+========================================= */
+
+.write-review-section {
+    padding: 100px 7%;
+
+    background: #542d1d;
+}
+
+.write-review-container {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+.write-review-text {
+    color: white;
+}
+
+.write-review-text > p:first-child {
+    margin-bottom: 18px;
+
+    color: #e8b844;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.write-review-text h2 {
+    margin-bottom: 25px;
+
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1.05;
+}
+
+.write-review-text h2 span {
+    color: #e8b844;
+}
+
+.write-description {
+    color: #e2d1c4;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   REVIEW FORM
+========================================= */
+
+.review-form {
+    padding: 35px;
+
+    background: #f5ead8;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #542d1d;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #dbc9b8;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: white;
+
+    color: #542d1d;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #e8b844;
+
+    box-shadow:
+        0 0 0 3px rgba(232, 184, 68, 0.15);
+}
+
+.form-group textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+/* =========================================
+   RATING SELECT
+========================================= */
+
+.rating-select {
+    display: flex;
+
+    flex-direction: row-reverse;
+
+    justify-content: flex-end;
+
+    gap: 5px;
+}
+
+.rating-select input {
+    display: none;
+}
+
+.rating-select label {
+    margin: 0;
+
+    color: #d6c8bb;
+
+    font-size: 31px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.rating-select label:hover,
+.rating-select label:hover ~ label,
+.rating-select input:checked ~ label {
+    color: #e8b844;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.submit-review {
+    width: 100%;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #e8b844;
+
+    color: #542d1d;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.submit-review:hover {
+    background: #d9a72f;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.review-cta {
+    min-height: 420px;
+
+    padding: 70px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(245, 234, 216, 0.94),
+            rgba(245, 234, 216, 0.94)
+        );
+}
+
+.cta-content p {
+    margin-bottom: 15px;
+
+    color: #783b1c;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.cta-content h2 {
+    margin-bottom: 30px;
+
+    color: #542d1d;
+
+    font-size: clamp(38px, 5vw, 65px);
+
+    line-height: 1;
+}
+
+.cta-content h2 span {
+    color: #b27a20;
+}
+
+.btn-primary {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 25px;
+
+    border-radius: 7px;
+
+    background: #e8b844;
+
+    color: #542d1d;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #d9a72f;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding: 55px 20px 30px;
+
+    background: #2f1a12;
+
+    color: #f5ead8;
+
+    text-align: center;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+}
+
+.footer > p {
+    color: #cdb9aa;
+
+    font-size: 13px;
+}
+
+.social-icons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.social-icons a {
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #542d1d;
+
+    color: #e8b844;
+
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #e8b844;
+
+    color: #542d1d;
+
+    transform: translateY(-3px);
+}
+
+.footer .copyright {
+    margin-top: 25px;
+
+    color: #8f796d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .write-review-container {
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+
+        padding: 25px;
+
+        background: #e8b844;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .reviews-hero {
+        min-height: 560px;
+    }
+
+    .reviews-hero-content {
+        margin-left: 7%;
+
+        margin-right: 7%;
+    }
+
+    .reviews-section {
+        padding: 80px 5%;
+
+        background-attachment: scroll;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .write-review-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .logo span {
+        font-size: 14px;
+    }
+
+    .logo img {
+        width: 42px;
+
+        height: 42px;
+    }
+
+    .reviews-hero {
+        min-height: 520px;
+    }
+
+    .reviews-hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-small {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .overall-rating {
+        gap: 12px;
+    }
+
+    .rating-number {
+        font-size: 42px;
+    }
+
+    .reviews-section {
+        padding: 70px 5%;
+    }
+
+    .section-header h2 {
+        font-size: 35px;
+    }
+
+    .review-card {
+        padding: 23px;
+    }
+
+    .review-comment {
+        min-height: auto;
+
+        font-size: 14px;
+    }
+
+    .write-review-section {
+        padding: 70px 5%;
+    }
+
+    .review-form {
+        padding: 25px;
+    }
+
+    .write-review-text h2 {
+        font-size: 40px;
+    }
+
+    .review-top img,
+    .default-avatar {
+        width: 55px;
+
+        height: 55px;
+    }
+
+    .quote-icon {
+        width: 34px;
+
+        height: 34px;
+    }
+
+}

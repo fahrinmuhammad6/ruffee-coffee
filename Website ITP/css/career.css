@@ -1,0 +1,1472 @@
+
+/* =========================================================
+   RUFFEE COFFEE - CAREER PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5ead8;
+    color: #542d1d;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: #e8b844;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 9999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #542d1d;
+
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #542d1d;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.65;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 2px;
+
+    left: 50%;
+    bottom: -8px;
+
+    background: #542d1d;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: #542d1d;
+
+    font-size: 27px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.career-hero {
+    min-height: 700px;
+
+    padding-top: 80px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(36, 18, 9, 0.92) 0%,
+            rgba(36, 18, 9, 0.78) 42%,
+            rgba(36, 18, 9, 0.30) 100%
+        ),
+        url("../images/cafe4.jpg")
+        center center / cover no-repeat;
+
+    overflow: hidden;
+}
+
+.career-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -180px;
+    bottom: -220px;
+
+    border-radius: 50%;
+
+    background: rgba(232, 184, 68, 0.15);
+
+    pointer-events: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.12),
+            transparent 45%,
+            rgba(0, 0, 0, 0.18)
+        );
+
+    pointer-events: none;
+}
+
+.career-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin-left: 8%;
+    margin-right: 8%;
+
+    color: white;
+}
+
+.hero-small {
+    margin-bottom: 22px;
+
+    color: #e8b844;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.career-hero h1 {
+    margin-bottom: 28px;
+
+    color: white;
+
+    font-size: clamp(52px, 7vw, 88px);
+
+    line-height: 0.96;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+.career-hero h1 span {
+    color: #e8b844;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    margin-bottom: 38px;
+
+    color: #f5ead8;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 16px 23px;
+
+    border-radius: 7px;
+
+    background: #e8b844;
+    color: #542d1d;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #ffffff;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.hero-btn i {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   GENERAL SECTION HEADER
+   ========================================================= */
+
+.section-header {
+    max-width: 750px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.section-header p {
+    margin-bottom: 15px;
+
+    color: #b27a20;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.section-header h2 {
+    color: #542d1d;
+
+    font-size: clamp(38px, 5vw, 56px);
+
+    line-height: 1.08;
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+}
+
+.section-header h2 span {
+    color: #b27a20;
+}
+
+.header-line {
+    width: 55px;
+    height: 4px;
+
+    margin: 25px auto 0;
+
+    background: #e8b844;
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   WHY RUFFEE SECTION
+   ========================================================= */
+
+.why-section {
+    padding: 110px 7%;
+
+    background: #f5ead8;
+}
+
+.benefits-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.benefit-card {
+    position: relative;
+
+    padding: 38px 28px 35px;
+
+    background: #fffaf3;
+
+    border: 1px solid #eadbc9;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.benefit-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 0;
+    height: 3px;
+
+    background: #e8b844;
+
+    transform: translateX(-50%);
+
+    transition: width 0.35s ease;
+}
+
+.benefit-card:hover::before {
+    width: 55%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 45px rgba(84, 45, 29, 0.13);
+}
+
+.benefit-icon {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8b844;
+
+    color: #542d1d;
+
+    font-size: 24px;
+
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: rotate(-5deg) scale(1.08);
+}
+
+.benefit-card h3 {
+    margin-bottom: 13px;
+
+    color: #542d1d;
+
+    font-size: 18px;
+}
+
+.benefit-card p {
+    color: #806b5f;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   OPEN POSITIONS
+   ========================================================= */
+
+.positions-section {
+    padding: 110px 7%;
+
+    background: #fffaf3;
+}
+
+.positions-container {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.job-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 30px;
+
+    background: #f5ead8;
+
+    border: 1px solid #eadbc9;
+
+    border-radius: 16px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateX(7px);
+
+    box-shadow:
+        0 18px 40px rgba(84, 45, 29, 0.12);
+}
+
+.job-icon {
+    width: 68px;
+    height: 68px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8b844;
+
+    color: #542d1d;
+
+    font-size: 23px;
+
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover .job-icon {
+    transform: scale(1.08) rotate(-5deg);
+}
+
+.job-info {
+    flex: 1;
+}
+
+.job-type {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #b27a20;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.job-info h3 {
+    margin-bottom: 9px;
+
+    color: #542d1d;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+.job-info > p {
+    max-width: 680px;
+
+    margin-bottom: 15px;
+
+    color: #806b5f;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+.job-details {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    flex-wrap: wrap;
+}
+
+.job-details span {
+    color: #8d7668;
+
+    font-size: 11px;
+}
+
+.job-details i {
+    margin-right: 6px;
+
+    color: #b27a20;
+}
+
+.apply-btn {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    padding: 14px 19px;
+
+    border-radius: 7px;
+
+    background: #542d1d;
+    color: white;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    transition: all 0.3s ease;
+}
+
+.apply-btn:hover {
+    background: #e8b844;
+
+    color: #542d1d;
+
+    transform: translateY(-2px);
+}
+
+.apply-btn i {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   QUALITIES SECTION
+   ========================================================= */
+
+.qualities-section {
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #542d1d;
+}
+
+.qualities-image {
+    position: relative;
+
+    min-height: 650px;
+
+    background:
+        url("../images/cafe5.jpg")
+        center center / cover no-repeat;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(45, 22, 12, 0.20),
+            rgba(45, 22, 12, 0.72)
+        );
+}
+
+.image-text {
+    position: absolute;
+
+    left: 10%;
+    bottom: 11%;
+
+    color: white;
+}
+
+.image-text p {
+    margin-bottom: 15px;
+
+    color: #e8b844;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.image-text h2 {
+    color: white;
+
+    font-size: clamp(40px, 4.5vw, 62px);
+
+    line-height: 1.02;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+}
+
+.image-text h2 span {
+    color: #e8b844;
+}
+
+.qualities-content {
+    padding: 90px 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: white;
+}
+
+.content-small {
+    margin-bottom: 18px;
+
+    color: #e8b844;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.qualities-content h2 {
+    margin-bottom: 25px;
+
+    color: white;
+
+    font-size: clamp(35px, 4vw, 52px);
+
+    line-height: 1.08;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.qualities-content h2 span {
+    color: #e8b844;
+}
+
+.qualities-description {
+    max-width: 500px;
+
+    margin-bottom: 38px;
+
+    color: #d8c5b7;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.quality-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+.quality-item {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.check-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8b844;
+
+    color: #542d1d;
+
+    font-size: 13px;
+}
+
+.quality-item h4 {
+    margin-bottom: 4px;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+.quality-item p {
+    color: #cbb6a8;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   APPLICATION CTA
+   ========================================================= */
+
+.apply-section {
+    position: relative;
+
+    padding: 115px 7%;
+
+    background:
+        linear-gradient(
+            rgba(245, 234, 216, 0.94),
+            rgba(245, 234, 216, 0.94)
+        ),
+        url("../images/cafe4.jpg")
+        center center / cover no-repeat;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.apply-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    top: -180px;
+    left: -120px;
+
+    border-radius: 50%;
+
+    background: rgba(232, 184, 68, 0.18);
+}
+
+.apply-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -120px;
+    bottom: -170px;
+
+    border-radius: 50%;
+
+    background: rgba(84, 45, 29, 0.08);
+}
+
+.apply-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.apply-content > p:first-child {
+    margin-bottom: 18px;
+
+    color: #b27a20;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.apply-content h2 {
+    margin-bottom: 25px;
+
+    color: #542d1d;
+
+    font-size: clamp(40px, 5vw, 64px);
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+}
+
+.apply-content h2 span {
+    color: #b27a20;
+}
+
+.apply-description {
+    max-width: 600px;
+
+    margin: 0 auto 32px;
+
+    color: #806b5f;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.apply-main-btn {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px 24px;
+
+    border-radius: 7px;
+
+    background: #e8b844;
+
+    color: #542d1d;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    transition: all 0.3s ease;
+}
+
+.apply-main-btn:hover {
+    background: #542d1d;
+
+    color: white;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(84, 45, 29, 0.18);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    padding: 60px 20px 30px;
+
+    background: #2f1a12;
+
+    color: #f5ead8;
+
+    text-align: center;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+
+    color: #f5ead8;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+}
+
+.footer > p {
+    color: #cdb9aa;
+
+    font-size: 13px;
+}
+
+.social-icons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.social-icons a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #542d1d;
+
+    color: #e8b844;
+
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #e8b844;
+
+    color: #542d1d;
+
+    transform: translateY(-4px);
+}
+
+.footer .copyright {
+    margin-top: 25px;
+
+    color: #8f796d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .career-hero-content {
+        margin-left: 7%;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .qualities-content {
+        padding: 75px 8%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    .logo {
+        gap: 9px;
+
+        font-size: 15px;
+    }
+
+    .logo img {
+        width: 43px;
+        height: 43px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 20px;
+
+        padding: 27px 20px;
+
+        background: #e8b844;
+
+        box-shadow:
+            0 15px 30px rgba(84, 45, 29, 0.12);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-links a::after {
+        bottom: -6px;
+    }
+
+
+    /* HERO */
+
+    .career-hero {
+        min-height: 600px;
+
+        padding-top: 70px;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(36, 18, 9, 0.88),
+                rgba(36, 18, 9, 0.55)
+            ),
+            url("../images/cafe4.jpg")
+            center center / cover no-repeat;
+    }
+
+    .career-hero-content {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+    .career-hero h1 {
+        font-size: clamp(45px, 11vw, 68px);
+
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+
+    /* BENEFITS */
+
+    .why-section {
+        padding: 80px 6%;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+    }
+
+
+    /* POSITIONS */
+
+    .positions-section {
+        padding: 80px 6%;
+    }
+
+    .job-card {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+
+        padding: 25px;
+    }
+
+    .job-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .job-info {
+        min-width: calc(100% - 85px);
+    }
+
+    .job-info h3 {
+        font-size: 22px;
+    }
+
+    .apply-btn {
+        width: 100%;
+
+        margin-left: 0;
+
+        justify-content: center;
+    }
+
+
+    /* QUALITIES */
+
+    .qualities-section {
+        grid-template-columns: 1fr;
+    }
+
+    .qualities-image {
+        min-height: 500px;
+    }
+
+    .qualities-content {
+        min-height: 550px;
+
+        padding: 75px 8%;
+    }
+
+
+    /* CTA */
+
+    .apply-section {
+        padding: 90px 6%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .navbar {
+        height: 68px;
+    }
+
+    .logo span {
+        font-size: 13px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-links {
+        top: 68px;
+    }
+
+
+    /* HERO */
+
+    .career-hero {
+        min-height: 560px;
+    }
+
+    .career-hero-content {
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+
+    .hero-small {
+        margin-bottom: 16px;
+
+        font-size: 10px;
+
+        letter-spacing: 2.5px;
+    }
+
+    .career-hero h1 {
+        margin-bottom: 22px;
+
+        font-size: 45px;
+
+        line-height: 0.98;
+    }
+
+    .hero-description {
+        margin-bottom: 28px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .hero-btn {
+        padding: 14px 18px;
+
+        font-size: 10px;
+    }
+
+
+    /* HEADERS */
+
+    .section-header {
+        margin-bottom: 45px;
+    }
+
+    .section-header p {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .section-header h2 {
+        font-size: 35px;
+    }
+
+
+    /* BENEFITS */
+
+    .why-section {
+        padding: 70px 5%;
+    }
+
+    .benefit-card {
+        padding: 32px 23px;
+    }
+
+
+    /* JOBS */
+
+    .positions-section {
+        padding: 70px 5%;
+    }
+
+    .job-card {
+        padding: 22px;
+    }
+
+    .job-icon {
+        width: 55px;
+        height: 55px;
+
+        font-size: 20px;
+    }
+
+    .job-info {
+        min-width: calc(100% - 75px);
+    }
+
+    .job-type {
+        font-size: 9px;
+    }
+
+    .job-info h3 {
+        font-size: 20px;
+    }
+
+    .job-info > p {
+        font-size: 12px;
+    }
+
+    .job-details {
+        gap: 12px;
+    }
+
+    .job-details span {
+        font-size: 10px;
+    }
+
+    .apply-btn {
+        padding: 13px;
+
+        font-size: 10px;
+    }
+
+
+    /* QUALITIES */
+
+    .qualities-image {
+        min-height: 400px;
+    }
+
+    .image-text {
+        left: 8%;
+        bottom: 9%;
+    }
+
+    .image-text p {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .image-text h2 {
+        font-size: 40px;
+    }
+
+    .qualities-content {
+        min-height: auto;
+
+        padding: 65px 8%;
+    }
+
+    .qualities-content h2 {
+        font-size: 36px;
+    }
+
+    .qualities-description {
+        font-size: 13px;
+    }
+
+
+    /* CTA */
+
+    .apply-section {
+        padding: 80px 5%;
+    }
+
+    .apply-content h2 {
+        font-size: 40px;
+    }
+
+    .apply-description {
+        font-size: 13px;
+    }
+
+    .apply-main-btn {
+        padding: 14px 18px;
+
+        font-size: 10px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 50px 20px 25px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .logo span {
+        font-size: 11px;
+    }
+
+    .career-hero h1 {
+        font-size: 40px;
+    }
+
+    .career-hero {
+        min-height: 530px;
+    }
+
+    .hero-btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .image-text h2 {
+        font-size: 35px;
+    }
+
+    .qualities-content h2 {
+        font-size: 32px;
+    }
+
+    .apply-content h2 {
+        font-size: 35px;
+    }
+}
+
+.google-form-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto 0;
+    background: #fffaf3;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(84, 45, 29, 0.15);
+    overflow: hidden;
+}
+
+.google-form-container iframe {
+    width: 100%;
+    min-height: 1200px;
+    border: none;
+    display: block;
+    border-radius: 12px;
+}

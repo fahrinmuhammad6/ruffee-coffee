@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu - Ruffee Coffee</title>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+
+    <header class="navbar">
+
+
+        <!-- LOGO -->
+
+        <a href="../index.html" class="logo">
+
+            <img src="../images/logo.png" alt="Ruffee Coffee Logo">
+
+            <span>RUFFEE COFFEE</span>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav-links">
+
+            <a href="../index.html">HOME</a>
+
+            <a href="menu.html" class="active">MENU</a>
+
+            <a href="reservation.html">RESERVATION</a>
+
+            <a href="merchandise.html">MERCHANDISE</a>
+
+            <a href="reviews.html">REVIEWS</a>
+
+            <a href="career.html">CAREER</a>
+
+            <a href="about.html">ABOUT US</a>
+
+            <a href="contact.html">CONTACT US</a>
+
+        </nav>
+
+
+        <!-- MOBILE BUTTON -->
+
+        <button class="menu-toggle">☰</button>
+
+    </header>
+
+
+
+    <!-- =========================
+         MENU PAGE
+    ========================== -->
+
+    <main>
+
+        <section class="menu-page">
+
+
+            <!-- =================================
+                 FLOATING COFFEE BEANS
+            ================================== -->
+
+            <div
+                class="coffee-beans"
+                style="
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: 1;
+                "
+            >
+
+                <!-- BEAN 1 -->
+                <img
+                    src="../images/beans.png"
+                    class="bean bean-1"
+                    alt=""
+                    style="
+                        position: absolute;
+                        top: 12%;
+                        left: 3%;
+                        width: 60px;
+                        height: 60px;
+                        object-fit: contain;
+                        opacity: 0.65;
+                        animation: floatingBeans 5s ease-in-out infinite;
+                    "
+                >
+
+                <!-- BEAN 2 -->
+                <img
+                    src="../images/beans.png"
+                    class="bean bean-2"
+                    alt=""
+                    style="
+                        position: absolute;
+                        top: 27%;
+                        right: 4%;
+                        width: 75px;
+                        height: 75px;
+                        object-fit: contain;
+                        opacity: 0.65;
+                        animation: floatingBeans 5s ease-in-out infinite 1s;
+                    "
+                >
+
+                <!-- BEAN 3 -->
+                <img
+                    src="../images/beans.png"
+                    class="bean bean-3"
+                    alt=""
+                    style="
+                        position: absolute;
+                        top: 46%;
+                        left: 2%;
+                        width: 65px;
+                        height: 65px;
+                        object-fit: contain;
+                        opacity: 0.65;
+                        animation: floatingBeans 5s ease-in-out infinite 2s;
+                    "
+                >
+
+                <!-- BEAN 4 -->
+                <img
+                    src="../images/beans.png"
+                    class="bean bean-4"
+                    alt=""
+                    style="
+                        position: absolute;
+                        top: 62%;
+                        right: 3%;
+                        width: 60px;
+                        height: 60px;
+                        object-fit: contain;
+                        opacity: 0.65;
+                        animation: floatingBeans 5s ease-in-out infinite 3s;
+                    "
+                >
+
+                <!-- BEAN 5 -->
+                <img
+                    src="../images/beans.png"
+                    class="bean bean-5"
+                    alt=""
+                    style="
+                        position: absolute;
+                        top: 77%;
+                        left: 6%;
+                        width: 75px;
+                        height: 75px;
+                        object-fit: contain;
+                        opacity: 0.65;
+                        animation: floatingBeans 5s ease-in-out infinite 4s;
+                    "
+                >
+
+                <!-- BEAN 6 -->
+                <img
+                    src="../images/beans.png"
+                    class="bean bean-6"
+                    alt=""
+                    style="
+                        position: absolute;
+                        top: 88%;
+                        right: 9%;
+                        width: 55px;
+                        height: 55px;
+                        object-fit: contain;
+                        opacity: 0.65;
+                        animation: floatingBeans 5s ease-in-out infinite 2.5s;
+                    "
+                >
+
+            </div>
+
+
+
+            <!-- =========================
+                 MENU HEADER
+            ========================== -->
+
+            <div class="menu-header">
+
+                <p>EXPLORE OUR MENU</p>
+
+                <h1>OUR <span>MENU.</span></h1>
+
+            </div>
+
+
+
+            <!-- =========================
+                 CATEGORY BUTTONS
+            ========================== -->
+
+            <div class="menu-categories">
+
+                <button class="category active" data-category="coffee">COFFEE</button>
+
+                <button class="category" data-category="noncoffee">NON COFFEE</button>
+
+                <button class="category" data-category="refreshing">REFRESHING</button>
+
+                <button class="category" data-category="hot">HOT</button>
+
+                <button class="category" data-category="frappe">FRAPPE</button>
+
+            </div>
+
+
+
+            <!-- =========================
+                 COFFEE
+            ========================== -->
+
+            <section class="menu-section" data-menu="coffee">
+
+                <h2 class="category-title">COFFEE</h2>
+
+                <div class="menu-grid">
+
+                    <!-- AMERICANO -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/americano.png" alt="Americano">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">COFFEE</span>
+                            <h3>Americano</h3>
+                            <p>Bold espresso with smooth hot water.</p>
+                            <strong>RM 8.90</strong>
+                        </div>
+                    </div>
+
+                    <!-- LATTE -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/latte.png" alt="Latte">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">COFFEE</span>
+                            <h3>Latte</h3>
+                            <p>Smooth espresso with creamy steamed milk.</p>
+                            <strong>RM 11.90</strong>
+                        </div>
+                    </div>
+
+                    <!-- MOCHA -->
+                    <div class="menu-card mocha-card">
+                        <div class="menu-image">
+                            <img src="../images/mocha.png" alt="Mocha" class="mocha-img">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">COFFEE</span>
+                            <h3>Mocha</h3>
+                            <p>Rich espresso blended with chocolate and milk.</p>
+                            <strong>RM 12.90</strong>
+                        </div>
+                    </div>
+
+                    <!-- CAPPUCCINO -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/cappuccino.png" alt="Cappuccino">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">COFFEE</span>
+                            <h3>Cappuccino</h3>
+                            <p>Espresso topped with silky milk foam.</p>
+                            <strong>RM 11.90</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 NON COFFEE
+            ========================== -->
+
+            <section class="menu-section" data-menu="noncoffee">
+
+                <h2 class="category-title">NON COFFEE</h2>
+
+                <div class="menu-grid">
+
+                    <!-- MATCHA -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/matcha.png" alt="Matcha">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">NON COFFEE</span>
+                            <h3>Matcha</h3>
+                            <p>Smooth matcha blended with creamy milk.</p>
+                            <strong>RM 12.90</strong>
+                        </div>
+                    </div>
+
+                    <!-- STRAWBERRY MATCHA -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/strawberry-matcha.png" alt="Strawberry Matcha">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">NON COFFEE</span>
+                            <h3>Strawberry Matcha</h3>
+                            <p>Fresh strawberry paired with smooth matcha.</p>
+                            <strong>RM 13.90</strong>
+                        </div>
+                    </div>
+
+                    <!-- CHOCOLATE (ZOOM BESAR) -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/chocolate.png" alt="Chocolate" class="zoom-lg">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">NON COFFEE</span>
+                            <h3>Chocolate</h3>
+                            <p>Rich chocolate drink with creamy milk.</p>
+                            <strong>RM 10.90</strong>
+                        </div>
+                    </div>
+
+                    <!-- PEACH TEA -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/peach-tea.png" alt="Peach Tea">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">NON COFFEE</span>
+                            <h3>Peach Tea</h3>
+                            <p>Sweet peach tea with a refreshing fruity taste.</p>
+                            <strong>RM 9.90</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 REFRESHING
+            ========================== -->
+
+            <section class="menu-section" data-menu="refreshing">
+
+                <h2 class="category-title">REFRESHING</h2>
+
+                <div class="menu-grid">
+
+                    <!-- BLUE LEMON MOJITO (ZOOM) -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/blue-lemon-mojito.png" alt="Blue Lemon Mojito" class="zoom-md">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">REFRESHING</span>
+                            <h3>Blue Lemon Mojito</h3>
+                            <p>Refreshing blue lemon drink with a citrus twist.</p>
+                            <strong>RM 11.90</strong>
+                        </div>
+                    </div>
+
+                    <!-- STRAWBERRY MOJITO -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/strawberry-mojito.png" alt="Strawberry Mojito">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">REFRESHING</span>
+                            <h3>Strawberry Mojito</h3>
+                            <p>Sweet strawberry with a refreshing mojito finish.</p>
+                            <strong>RM 11.90</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 HOT
+            ========================== -->
+
+            <section class="menu-section" data-menu="hot">
+
+                <h2 class="category-title">HOT</h2>
+
+                <div class="menu-grid">
+
+                    <!-- CHOCOLATE HOT -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/chocolate-hot.png" alt="Chocolate Hot">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">HOT</span>
+                            <h3>Chocolate Hot</h3>
+                            <p>Warm and creamy chocolate for a cozy moment.</p>
+                            <strong>RM 10.90</strong>
+                        </div>
+                    </div>
+
+                    <!-- AMERICANO HOT -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/americano-hot.png" alt="Americano Hot">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">HOT</span>
+                            <h3>Americano Hot</h3>
+                            <p>Bold espresso served hot and smooth.</p>
+                            <strong>RM 8.90</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 FRAPPE
+            ========================== -->
+
+            <section class="menu-section" data-menu="frappe">
+
+                <h2 class="category-title">FRAPPE</h2>
+
+                <div class="menu-grid">
+
+                    <!-- CHOCOLATE FRAPPE -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/chocolate-frappe.png" alt="Chocolate Frappe">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">FRAPPE</span>
+                            <h3>Chocolate Frappe</h3>
+                            <p>Creamy blended chocolate with a rich finish.</p>
+                            <strong>RM 14.90</strong>
+                        </div>
+                    </div>
+
+                    <!-- BISCOFF FRAPPE (ZOOM) -->
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="../images/biscoff-frappe.png" alt="Biscoff Frappe" class="zoom-sm">
+                        </div>
+                        <div class="menu-info">
+                            <span class="menu-category">FRAPPE</span>
+                            <h3>Biscoff Frappe</h3>
+                            <p>Creamy frappe blended with delicious Biscoff.</p>
+                            <strong>RM 15.90</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <h3>RUFFEE COFFEE</h3>
+
+        <p>Made for your everyday moments.</p>
+
+
+        <div class="social-icons">
+
+            <a href="#" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+
+
+        <p class="copyright">
+            © 2026 Ruffee Coffee.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         FLOATING BEAN ANIMATION
+    ========================== -->
+
+    <style>
+
+        @keyframes floatingBeans {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(12deg);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .bean {
+                opacity: 0.55 !important;
+            }
+
+        }
+
+    </style>
+
+
+
+    <!-- =========================
+         CATEGORY SCRIPT
+    ========================== -->
+
+    <script>
+
+        const categoryButtons = document.querySelectorAll(".category");
+
+        const menuSections = document.querySelectorAll(".menu-section");
+
+
+        function showCategory(category) {
+
+            menuSections.forEach(section => {
+
+                if (section.dataset.menu === category) {
+
+                    section.style.display = "block";
+
+                } else {
+
+                    section.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+        categoryButtons.forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                categoryButtons.forEach(btn => {
+
+                    btn.classList.remove("active");
+
+                });
+
+                this.classList.add("active");
+
+                showCategory(this.dataset.category);
+
+            });
+
+        });
+
+
+        /* DEFAULT CATEGORY */
+
+        showCategory("coffee");
+
+    </script>
+
+
+</body>
+
+</html>
